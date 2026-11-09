@@ -31,16 +31,7 @@
 .hero h1{font-size:clamp(48px,5.4vw,78px);line-height:1.08;letter-spacing:-.065em}
 .hero-lede{max-width:530px;line-height:1.75}
 .hero-meta{margin-top:48px;gap:13px 24px;flex-wrap:wrap}
-.hero-gallery{display:grid;grid-template-rows:minmax(0,1fr) 128px;gap:12px;height:min(505px,62vh);min-width:0}
-.hero-gallery img{display:block;width:100%;height:100%;object-fit:cover;border:1px solid rgba(220,239,250,.25);border-radius:9px;background:#dce8ee}
-.hero-shot-main{object-position:50% 38%}
-.hero-shot-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-height:0}
-.hero-shot-row{height:128px;overflow:hidden}
-.hero-shot-row img{height:128px;min-height:0}
-.hero-shot-row img:first-child{object-position:50% 20%}
-.hero-shot-row img:last-child{object-position:50% 50%}
 .hero-copy{animation:hero-in .7s ease-out both}
-.hero-gallery{animation:hero-in .85s .12s ease-out both}
 @keyframes hero-in{from{opacity:0;transform:translateY(13px)}to{opacity:1;transform:translateY(0)}}
 .project-card:hover{transform:translateY(-2px);box-shadow:0 17px 38px rgba(24,53,80,.1)}
 .project-card:hover .project-image img{transform:scale(1.025)}
@@ -60,8 +51,14 @@
 .project-actions a:last-child:focus-visible{outline-color:#ffcf76}
 .skip{left:8px;transform:translateY(-150%);transition:transform .2s}
 .skip:focus{transform:translateY(0)}
-@media(max-width:1080px){.hero-inner{gap:30px}.hero-gallery{height:430px}}
-@media(max-width:960px){.hero-inner{grid-template-columns:1fr;min-height:0;gap:0;padding-top:0}.hero-copy{padding:75px 0 36px}.hero-gallery{height:355px;margin-bottom:55px;grid-template-rows:minmax(0,1fr) 95px}.hero-shot-row{height:95px}.hero-shot-row img{height:95px}.hero{min-height:0}}
-@media(max-width:640px){.hero{min-height:100svh}.hero-inner{padding-top:0;min-height:calc(100svh - 62px)}.hero-copy{padding:54px 0 25px}.hero h1{font-size:clamp(42px,11vw,55px);margin-bottom:20px}.hero-lede{font-size:14px;line-height:1.7;margin-bottom:24px}.hero-actions{gap:9px}.hero-actions .button{min-height:44px;padding:0 13px;gap:9px;font-size:12px}.hero-meta{margin-top:25px;font-size:9px}.hero-gallery{height:205px;display:block;margin:0 0 30px}.hero-shot-row{display:none}.case-figure-feedback img{height:240px}}
-@media(max-width:360px){.eyebrow{gap:8px;white-space:nowrap;font-size:9px}.eyebrow-line{display:none}.hero-copy{padding:35px 0 14px}.hero-lede{margin-bottom:17px}.hero-meta{margin-top:17px}.hero-gallery{height:168px;margin-bottom:18px}}
-@media(prefers-reduced-motion:reduce){.hero-copy,.hero-gallery{animation:none}}
+@media(max-width:640px){.hero{min-height:100svh}.hero-inner{padding-top:0;min-height:calc(100svh - 62px)}.hero-copy{padding:54px 0 25px}.hero h1{font-size:clamp(42px,11vw,55px);margin-bottom:20px}.hero-lede{font-size:14px;line-height:1.7;margin-bottom:24px}.hero-actions{gap:9px}.hero-actions .button{min-height:44px;padding:0 13px;gap:9px;font-size:12px}.hero-meta{margin-top:25px;font-size:9px}.case-figure-feedback img{height:240px}}
+@media(max-width:360px){.eyebrow{gap:8px;white-space:nowrap;font-size:9px}.eyebrow-line{display:none}.hero-copy{padding:35px 0 14px}.hero-lede{margin-bottom:17px}.hero-meta{margin-top:17px}}
+
+/* Text-led cover after removing the project screenshot montage. */
+.hero{min-height:0}
+.hero-inner{display:flex;align-items:center;min-height:620px}
+.hero-copy{width:100%;max-width:830px;padding:0}
+@media(max-width:960px){.hero-inner{min-height:570px;padding-top:0}.hero-copy{padding:0}}
+@media(max-width:640px){.hero{min-height:0}.hero-inner{display:block;min-height:0}.hero-copy{padding:95px 0 80px}}
+@media(max-width:360px){.hero-copy{padding:75px 0 65px}}
+@media(prefers-reduced-motion:reduce){.hero-copy{animation:none}}
